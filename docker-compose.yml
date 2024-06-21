@@ -1,0 +1,12 @@
+version: '1.0'
+
+services:
+  iraspen:
+    build: ./app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/data
+      - ./app:/app
+    container_name: passion
+    command: streamlit run server.py --server.port 8501 --server.address 0.0.0.0
